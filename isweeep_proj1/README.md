@@ -1,2 +1,0 @@
-# isweeep_proj1
- 
