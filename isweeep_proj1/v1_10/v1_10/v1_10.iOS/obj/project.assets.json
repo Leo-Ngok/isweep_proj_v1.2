@@ -2101,11 +2101,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\z1023\\Desktop\\v1_10\\v1_10\\v1_10.iOS\\v1_10.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\z1023\\Desktop\\ghproj\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10.iOS\\v1_10.iOS.csproj",
       "projectName": "v1_10.iOS",
-      "projectPath": "C:\\Users\\z1023\\Desktop\\v1_10\\v1_10\\v1_10.iOS\\v1_10.iOS.csproj",
+      "projectPath": "C:\\Users\\z1023\\Desktop\\ghproj\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10.iOS\\v1_10.iOS.csproj",
       "packagesPath": "C:\\Users\\z1023\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\z1023\\Desktop\\v1_10\\v1_10\\v1_10.iOS\\obj\\",
+      "outputPath": "C:\\Users\\z1023\\Desktop\\ghproj\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -2122,8 +2122,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\z1023\\Desktop\\v1_10\\v1_10\\v1_10\\v1_10.csproj": {
-              "projectPath": "C:\\Users\\z1023\\Desktop\\v1_10\\v1_10\\v1_10\\v1_10.csproj"
+            "C:\\Users\\z1023\\Desktop\\ghproj\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10\\v1_10.csproj": {
+              "projectPath": "C:\\Users\\z1023\\Desktop\\ghproj\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10\\v1_10.csproj"
             }
           }
         }

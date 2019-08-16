@@ -1,5 +1,0 @@
-values/Strings.xml;values/strings.xml
-layout/CellBaseView.axml;layout/cellbaseview.xml
-layout/ContentCell.axml;layout/contentcell.xml
-layout/FooterCell.axml;layout/footercell.xml
-layout/HeaderCell.axml;layout/headercell.xml

@@ -1017,11 +1017,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\z1023\\Desktop\\v1_10\\v1_10\\v1_10\\v1_10.csproj",
+      "projectUniqueName": "C:\\Users\\z1023\\Desktop\\ghproj\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10\\v1_10.csproj",
       "projectName": "v1_10",
-      "projectPath": "C:\\Users\\z1023\\Desktop\\v1_10\\v1_10\\v1_10\\v1_10.csproj",
+      "projectPath": "C:\\Users\\z1023\\Desktop\\ghproj\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10\\v1_10.csproj",
       "packagesPath": "C:\\Users\\z1023\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\z1023\\Desktop\\v1_10\\v1_10\\v1_10\\obj\\",
+      "outputPath": "C:\\Users\\z1023\\Desktop\\ghproj\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
