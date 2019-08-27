@@ -103,7 +103,8 @@ C:\Users\z1023\Desktop\ghproj\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10\o
 C:\Users\z1023\Desktop\ghproj\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10\obj\Debug\netstandard2.0\v1_10.csproj.CoreCompileInputs.cache
 C:\Users\z1023\Desktop\ghproj\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10\obj\Debug\netstandard2.0\v1_10.AssemblyInfoInputs.cache
 C:\Users\z1023\Desktop\ghproj\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10\obj\Debug\netstandard2.0\v1_10.AssemblyInfo.cs
-C:\Users\z1023\Desktop\ghproj\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\z1023\Desktop\ghproj\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10\obj\Debug\netstandard2.0\v1_10.csproj.CopyComplete
 C:\Users\z1023\Desktop\ghproj\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10\obj\Debug\netstandard2.0\v1_10.dll
 C:\Users\z1023\Desktop\ghproj\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10\obj\Debug\netstandard2.0\v1_10.pdb
+C:\Users\z1023\Desktop\ghproj\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10\obj\Debug\netstandard2.0\v1_10.csprojAssemblyReference.cache
+C:\Users\z1023\Desktop\ghproj\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10\obj\Debug\netstandard2.0\XamlC.stamp

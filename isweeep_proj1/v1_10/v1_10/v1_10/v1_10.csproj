@@ -12,6 +12,7 @@
   <ItemGroup>
     <PackageReference Include="AiForms.SettingsView" Version="0.5.2" />
     <PackageReference Include="AngleSharp" Version="0.12.1" />
+    <PackageReference Include="Matcha.BackgroundService" Version="1.0.5478" />
     <PackageReference Include="Microcharts.Forms" Version="0.7.1" />
     <PackageReference Include="Mvvmicro" Version="0.10.17" />
     <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />

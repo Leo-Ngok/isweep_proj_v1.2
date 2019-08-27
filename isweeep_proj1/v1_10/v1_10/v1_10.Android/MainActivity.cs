@@ -8,11 +8,12 @@ using Android.Widget;
 using Android.OS;
 using System.IO;
 using Xamarin.Forms;
+using Matcha.BackgroundService.Droid;
 
 namespace v1_10.Droid
 {
     [Activity(Label = "v1_10", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -21,7 +22,7 @@ namespace v1_10.Droid
 
             base.OnCreate(savedInstanceState);
 
-
+            BackgroundAggregator.Init(this);
             string filename = "weather_db.sqlite";
             string filelocation = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string full_path = Path.Combine(filelocation, filename);

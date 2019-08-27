@@ -6,6 +6,7 @@ using Foundation;
 using UIKit;
 using UserNotifications;
 using Xamarin.Forms;
+using Matcha.BackgroundService.iOS;
 
 namespace v1_10.iOS
 {
@@ -54,6 +55,7 @@ namespace v1_10.iOS
 
                 UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
             }
+            BackgroundAggregator.Init(this);
             return base.FinishedLaunching(app, options);
         }
     }
