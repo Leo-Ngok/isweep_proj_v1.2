@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,15 +12,9 @@ namespace v1_10.Views
         {
             InitializeComponent();
         }
-        protected override bool OnBackButtonPressed()
+        public ICommand ClickCommand => new Command<string>((url) =>
         {
-            Device.BeginInvokeOnMainThread(async () => {
-                bool answer = await DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
-                if (answer) await this.Navigation.PopAsync(); // or anything else
-            });
-
-            return true;
-
-        }
+            Device.OpenUri(new System.Uri(url));
+        });
     }
 }

@@ -1,18 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="v1_10.Views.Personal_Information"
+             x:Class="v1_10.Views.Personal_Information"            
              Title="User Profile">
-
     <ContentPage.Content>
         <ScrollView>
             <RelativeLayout>
 
-                <Label Text="User Information"  FontSize="26"
+                <Label x:Name="lbl0" Text="User Information"  FontSize="26"
                        HorizontalTextAlignment="Center" 
                        RelativeLayout.YConstraint="{ConstraintExpression Property=Y, Factor=0, Constant=0}" 
                        RelativeLayout.WidthConstraint="{ConstraintExpression Property=Width, Factor=1}" />
-                <Label Text="Date of Birth" FontSize="15"
+                <Label x:Name="lbl1" Text="Date of Birth" FontSize="15"
                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=150}"
                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.25,Constant=0}"
@@ -24,20 +23,20 @@
                             RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0.75,Constant=0}"
                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=50}" />
 
-                <Label FontSize="15"  Text="Height"
+                <Label x:Name="lbl2" FontSize="15"  Text="Height"
                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=200}"
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.25,Constant=0}"
                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
                 <Entry
                         x:Name="height_text"
-                           Placeholder="Height in m"
+                           Placeholder="Height in cm"
                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=190}"
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3, Constant=0}"
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
 
-                <Label FontSize="15" Text="Weight"
+                <Label x:Name="lbl3" FontSize="15" Text="Weight"
                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=250}"
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.25,Constant=0}"
@@ -49,7 +48,7 @@
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
 
-                <Label FontSize="15" Text="Systolic Blood pressure"
+                <Label x:Name="lbl4" FontSize="15" Text="Systolic Blood pressure"
                        
                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=300}"
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
@@ -62,7 +61,7 @@
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
 
-                <Label FontSize="13" Text="Dialostic Blood pressure"
+                <Label x:Name="lbl5" FontSize="13" Text="Dialostic Blood pressure"
                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=350}"
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.25,Constant=0}"
@@ -75,7 +74,7 @@
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
 
-                <Label FontSize="15" Text="Cholesterol level"
+                <Label x:Name="lbl6" FontSize="15" Text="Cholesterol level"
                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=400}"
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.25,Constant=0}"
@@ -87,7 +86,7 @@
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
 
-                <Label FontSize="15" Text="HDL level"
+                <Label x:Name="lbl7" FontSize="15" Text="HDL level"
                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=450}"
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.25,Constant=0}"
@@ -99,7 +98,7 @@
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
 
-                <Label FontSize="15" Text="Gender"                      
+                <Label x:Name="lbl8" FontSize="15" Text="Gender"                      
                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=500}"
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.25,Constant=0}"
@@ -117,7 +116,7 @@
                     </Picker.Items>
                 </Picker>
 
-                <Label FontSize="15" Text="Are you a smoker?"
+                <Label x:Name="lbl9" FontSize="15" Text="Are you a smoker?"
                        
                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=550}"
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
@@ -135,7 +134,7 @@
                     </Picker.Items>
                 </Picker>
 
-                <Label FontSize="15" Text="Do you have diabetes?"
+                <Label x:Name="lbl10" FontSize="15" Text="Do you have diabetes?"
                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=600}"
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.25,Constant=0}"
@@ -153,7 +152,7 @@
                     </Picker.Items>
                 </Picker>
 
-                <Label FontSize="15" Text="(待確認)"
+                <Label x:Name="lbl11" FontSize="15" Text="Are you always taking medicine?"
                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=650}"
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.25,Constant=0}"
@@ -170,7 +169,7 @@
                         <x:String>No</x:String>
                     </Picker.Items>
                 </Picker>
-                <Button Text="Submit"  FontSize="26"
+                <Button x:Name="btn" Text="Submit"  FontSize="26"
                         Clicked="Button_Clicked"
                        RelativeLayout.YConstraint="{ConstraintExpression Property=Y, Factor=0, Constant=690}" 
                        RelativeLayout.WidthConstraint="{ConstraintExpression Property=Width, Factor=1}" />

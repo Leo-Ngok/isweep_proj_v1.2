@@ -28,6 +28,7 @@ namespace v1_10.Models
         public DB_weather()
         {
             WeatherInfo = new List<weatherkey>();
+            
             WeatherInfo.Add(new weatherkey { date = new DateTime(1999, 2, 15), MinTemp_level = 17,   MaxTemp_level = (25),   SO2_level = 0,     CO_level = 1.8, NO2_level = 32, PM2_5_level = 17, PM_10_level = 32, Hum_level = 0.8, O3_level = 20 });
             WeatherInfo.Add(new weatherkey { date = new DateTime(1999, 2, 16), MinTemp_level = 17.3, MaxTemp_level = (26.5), SO2_level = 0.8,   CO_level = 1.6, NO2_level = 35, PM2_5_level = 7, PM_10_level = 29, Hum_level = 0.82, O3_level = 29 });
             WeatherInfo.Add(new weatherkey { date = new DateTime(1999, 2, 17), MinTemp_level = 16.6, MaxTemp_level = (25.8), SO2_level = 0.3,   CO_level = 1.3, NO2_level = 40, PM2_5_level = 12, PM_10_level = 21, Hum_level = 0.81, O3_level = 41 });

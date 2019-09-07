@@ -16,6 +16,8 @@ namespace v1_10.Models
         public TimeSpan alerttime { get; set; }
         public bool walert { get; set; }
         public bool oalert { get; set; }
+        public Language language { get; set; }
+
     }
     public enum weight
     {
@@ -26,4 +28,5 @@ namespace v1_10.Models
     public enum height { Meter,Feet,None}
     public enum bp { mmHg, kPa, None }
     public enum temp { Celsius, Fahrenheit, None }
+    public enum Language { English,trad_chi,simp_chi}
 }

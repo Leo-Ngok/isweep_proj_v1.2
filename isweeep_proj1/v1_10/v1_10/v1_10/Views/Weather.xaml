@@ -43,7 +43,7 @@
         </chart:SfChart.Title>
 
             </chart:SfChart>
-            <chart:SfChart
+            <chart:SfChart x:Name="humchart"
                 RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=320}"
                 RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
                 RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
@@ -75,7 +75,7 @@
                                   
                             />
                 <chart:SfChart.Title>
-                    <chart:ChartTitle Text="Hudmidity of the next 5 days"/>
+                    <chart:ChartTitle Text="Humidity of the next 5 days"/>
                 </chart:SfChart.Title>
 
             </chart:SfChart>

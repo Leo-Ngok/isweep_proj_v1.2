@@ -3,12 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="v1_10.Views.Interval_Timer"
              Title="Interval Timer">
-    <!--StackLayout>
-        <Button Clicked="StartTimerButton_Clicked" Text="Start"/>
-        <Button Clicked="StopTimerButton_Clicked" Text="Stop"/>
-        <Label x:Name="dl" HorizontalOptions="Center" VerticalOptions="Center" Text="shit"/-->
+
+    <ScrollView>
     <RelativeLayout>
-        <Label Text="Interval Timer" FontSize="20"    x:Name="state"   HorizontalTextAlignment="Center"             
+        <Label  Text="Interval Timer" FontSize="20"    x:Name="state"   HorizontalTextAlignment="Center"             
                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=10}"
                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Constant=1}"
@@ -20,7 +18,7 @@
                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Constant=1}"
                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
 
-        <Label Text="Work Interval" FontSize="15"
+        <Label x:Name="labl1"  Text="Work Interval" FontSize="15"
                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=370}"
                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.25,Constant=0}"
@@ -68,7 +66,7 @@
              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.1,Constant=0}"
              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=40}"/>
 
-        <Label Text="Rest Interval"  FontSize="15"
+        <Label x:Name="labl2" Text="Rest Interval"  FontSize="15"
                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=410}"
                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.25,Constant=0}"
@@ -135,5 +133,6 @@
              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=40}"/>
 
 
-    </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
 </ContentPage>

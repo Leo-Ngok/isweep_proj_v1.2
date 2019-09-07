@@ -3216,23 +3216,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\z1023\\.nuget\\packages\\": {},
+    "C:\\Users\\patrickn\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\z1023\\Desktop\\ghproj\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10\\v1_10.csproj",
+      "projectUniqueName": "D:\\github\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10\\v1_10.csproj",
       "projectName": "v1_10",
-      "projectPath": "C:\\Users\\z1023\\Desktop\\ghproj\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10\\v1_10.csproj",
-      "packagesPath": "C:\\Users\\z1023\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\z1023\\Desktop\\ghproj\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10\\obj\\",
+      "projectPath": "D:\\github\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10\\v1_10.csproj",
+      "packagesPath": "C:\\Users\\patrickn\\.nuget\\packages\\",
+      "outputPath": "D:\\github\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\z1023\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\patrickn\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -62,7 +62,7 @@
                 </chart:SfChart.Title>
 
             </chart:SfChart>
-            <chart:SfChart
+            <chart:SfChart x:Name="chart0"
                 RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=440}"
                 RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
                 RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
@@ -98,7 +98,7 @@
                 </chart:SfChart.Title>
 
             </chart:SfChart>
-            <chart:SfChart
+            <chart:SfChart x:Name="chart1"
                 RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=750}"
                 RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
                 RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
@@ -134,7 +134,7 @@
                 </chart:SfChart.Title>
 
             </chart:SfChart>
-            <chart:SfChart
+            <chart:SfChart x:Name="chart2"
                 RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=1060}"
                 RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
                 RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
@@ -170,7 +170,7 @@
                 </chart:SfChart.Title>
 
             </chart:SfChart>
-            <chart:SfChart
+            <chart:SfChart x:Name="chart3"
                 RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=1370}"
                 RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
                 RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
@@ -206,7 +206,7 @@
                 </chart:SfChart.Title>
 
             </chart:SfChart>
-            <chart:SfChart
+            <chart:SfChart x:Name="chart4"
                 RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=1680}"
                 RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
                 RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
@@ -242,7 +242,7 @@
                 </chart:SfChart.Title>
 
             </chart:SfChart>
-            <chart:SfChart
+            <chart:SfChart x:Name="chart5"
                 RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=1990}"
                 RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
                 RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
@@ -278,7 +278,7 @@
                 </chart:SfChart.Title>
 
             </chart:SfChart>
-            <chart:SfChart
+            <chart:SfChart x:Name="chart6"
                 RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=2300}"
                 RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
                 RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
