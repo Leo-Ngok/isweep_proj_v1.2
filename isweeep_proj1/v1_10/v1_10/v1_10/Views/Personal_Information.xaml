@@ -151,27 +151,9 @@
                         <x:String>No</x:String>
                     </Picker.Items>
                 </Picker>
-
-                <Label x:Name="lbl11" FontSize="15" Text="Are you always taking medicine?"
-                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=650}"
-                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
-                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.25,Constant=0}"
-                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-                <Picker
-                    x:Name="tba"
-                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=640}"
-                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3, Constant=0}"
-                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
-                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" >
-                    <Picker.Items>
-                        <x:String>---Choose an item---</x:String>
-                        <x:String>Yes</x:String>
-                        <x:String>No</x:String>
-                    </Picker.Items>
-                </Picker>
                 <Button x:Name="btn" Text="Submit"  FontSize="26"
                         Clicked="Button_Clicked"
-                       RelativeLayout.YConstraint="{ConstraintExpression Property=Y, Factor=0, Constant=690}" 
+                       RelativeLayout.YConstraint="{ConstraintExpression Property=Y, Factor=0, Constant=640}" 
                        RelativeLayout.WidthConstraint="{ConstraintExpression Property=Width, Factor=1}" />
             </RelativeLayout>
         </ScrollView>

@@ -11,10 +11,10 @@ using Xamarin.Forms.Xaml;
 
 namespace v1_10.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-   
-	public partial class Record : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+
+    public partial class Record : ContentPage
+    {
         Language lang;
         string[][] text = { new string[] { "Show records","顯示記錄", "显示记录" },
         new string[] { "Temperature (Trend)","溫度 (趨勢)","温度 (趋势)"},
@@ -36,29 +36,32 @@ namespace v1_10.Views
         new string[] {  "O₃ conc.", "O₃ 濃度", "O₃ 浓度"},
         new string[] {  "Past records", "過往記錄", "过往记录"},
         new string[]{ "Error","錯誤","错误"},
-        new string[]{  "The interval should be greater than 2 days","間距應超過兩天", "间距应该超过两天" },
+        new string[]{  "The interval should be greater than 2 days",
+            "間距應超過兩天", "间距应该超过两天" },
         new string[]{"retry","重試","重试" } };
-		public Record ()
-		{
-			InitializeComponent ();
+        public Record()
+        {
+            InitializeComponent();
             Mindate.MinimumDate = new DateTime(1999, 2, 15);
             Mindate.MaximumDate = new DateTime(1999, 2, 21);
             Maxdate.MinimumDate = new DateTime(1999, 2, 15);
             Maxdate.MaximumDate = new DateTime(1999, 2, 21);
-		}
+        }
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            SQLiteConnection dbconn = new SQLiteConnection(App.settingpath);
+            SQLiteConnection dbconn;
+                
             try
             {
+                dbconn = new SQLiteConnection(App.settingpath);
                 var info = dbconn.Table<settingsdata>().ToList().First();
                 lang = info.language;
                 List<weatherkey> showdata = new DB_weather().WeatherInfo;
 
-                { 
-                
-                    weatherchart.SecondaryAxis.LabelStyle.LabelFormat = "##.#" + DB_weather.tempunit(info._temp);                
+                {
+
+                    weatherchart.SecondaryAxis.LabelStyle.LabelFormat = "##.#" + DB_weather.tempunit(info._temp);
                     if (info._temp == temp.Fahrenheit)
                     {
                         foreach (var item in showdata)
@@ -110,7 +113,7 @@ namespace v1_10.Views
         private void ShowRecordbtn_Clicked(object sender, EventArgs e)
         {
             var day = Maxdate.Date - Mindate.Date;
-            if(day.Days<2)
+            if (day.Days < 2)
             {
                 var p = (int)lang;
                 DisplayAlert(text[19][p], text[20][p], text[21][p]);

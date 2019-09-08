@@ -256,3 +256,5 @@ D:\github\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10.iOS\obj\iPhoneSimulat
 D:\github\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10.iOS\obj\iPhoneSimulator\Debug\v1_10.iOS.csproj.CopyComplete
 D:\github\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10.iOS\obj\iPhoneSimulator\Debug\v1_10.iOS.exe
 D:\github\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10.iOS\obj\iPhoneSimulator\Debug\v1_10.iOS.pdb
+D:\github\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10.iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.dll
+D:\github\isweep_proj_v1.2\isweeep_proj1\v1_10\v1_10\v1_10.iOS\bin\iPhoneSimulator\Debug\MOWeatherCore.dll

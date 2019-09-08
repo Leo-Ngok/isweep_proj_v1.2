@@ -35,6 +35,7 @@ namespace v1_10.Views
                 new HomeMenuItem {Id=MenuItemType.Configurations,Title="Configurations"},
                 new HomeMenuItem {Id = MenuItemType.About, Title="About"}
             };
+            ListViewMenu.ItemsSource = menuItems;
             ListViewMenu.SelectedItem = menuItems[0];
             ListViewMenu.ItemSelected += async (sender, e) =>
             {
@@ -45,15 +46,19 @@ namespace v1_10.Views
         }
         protected override void OnAppearing()
         {
-            updatetext();
+            try { updatetext(); } finally { }
             base.OnAppearing();
         }
         public void updatetext()
         {
-            int p = (int)new SQLiteConnection(App.settingpath).Table<settingsdata>().ToList().First().language;
-            for (int i = 0; i < 7; i++)
-                menuItems[i].Title = text[i][p];
-            ListViewMenu.ItemsSource = menuItems;
+            try
+            {
+                int p = (int)new SQLiteConnection(App.settingpath).Table<settingsdata>().ToList().First().language;
+                for (int i = 0; i < 7; i++)
+                    menuItems[i].Title = text[i][p];
+                ListViewMenu.ItemsSource = menuItems;
+            }
+            finally { }
         }
         public void appearanddisappear()
         {

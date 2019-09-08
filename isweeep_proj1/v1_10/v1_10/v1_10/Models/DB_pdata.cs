@@ -19,6 +19,5 @@ namespace v1_10.Models
         public bool genD { get; set; }
         public bool smoK { get; set; }
         public bool diaB { get; set; }
-        public bool medic { get; set; }
     }
 }

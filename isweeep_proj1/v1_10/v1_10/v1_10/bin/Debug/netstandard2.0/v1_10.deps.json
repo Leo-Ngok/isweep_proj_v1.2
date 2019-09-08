@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "666d51de0f23cb09d3e4ff2d992bb99aaad048d0"
+    "signature": "3b6cb087b30c8eb0b927785895088159c5558f10"
   },
   "compilationOptions": {},
   "targets": {
@@ -15,6 +15,7 @@
           "Microcharts.Forms": "0.7.1",
           "Mvvmicro": "0.10.17",
           "NETStandard.Library": "2.0.3",
+          "Newtonsoft.Json": "12.0.2",
           "Syncfusion.Xamarin.SfChart": "17.2.0.36",
           "Xam.Plugins.Notifier": "3.0.1",
           "Xamarin.Forms": "3.4.0.1008975",
@@ -70,6 +71,11 @@
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Newtonsoft.Json/12.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "SkiaSharp/1.59.1": {
@@ -552,6 +558,13 @@
       "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+      "path": "newtonsoft.json/12.0.2",
+      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
     },
     "SkiaSharp/1.59.1": {
       "type": "package",

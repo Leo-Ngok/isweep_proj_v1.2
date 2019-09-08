@@ -9,6 +9,7 @@ using Android.OS;
 using System.IO;
 using Xamarin.Forms;
 using Matcha.BackgroundService.Droid;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace v1_10.Droid
 {
@@ -17,6 +18,11 @@ namespace v1_10.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            
+                StrictMode.ThreadPolicy policy =
+                    new StrictMode.ThreadPolicy.Builder().PermitAll().Build();
+                StrictMode.SetThreadPolicy(policy);
+            
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
@@ -30,7 +36,7 @@ namespace v1_10.Droid
             string settings_path = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "settings_db.sqlite");
             string lgw_path = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "lgweather_db.sqlite");
             string fw_path = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "fweather_db.sqlite");
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Forms.Init(this, savedInstanceState);
             LoadApplication(new App(full_path, settings_path,lgw_path,fw_path));
             AiForms.Renderers.Droid.SettingsViewInit.Init(); // need to write here
         }

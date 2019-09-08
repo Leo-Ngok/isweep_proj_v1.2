@@ -4,6 +4,9 @@
              x:Class="v1_10.Views.Home">
     <ContentPage.Content>
         <StackLayout>
+            <Button Text="refresh now"
+                    Clicked="Button_Clicked"
+                HorizontalOptions="CenterAndExpand"/>
             <Label
                 x:Name="debuglabel"
                 Text=""

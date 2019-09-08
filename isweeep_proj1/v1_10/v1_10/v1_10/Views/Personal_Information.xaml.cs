@@ -15,6 +15,10 @@ namespace v1_10.Views
 	{
         double height, weight, sybp, dibp, chol, hdl;
         bool gen, smo, dia,med;
+        Language lang;
+        height hieg;
+        weight wieg;
+        bp pres;
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -22,14 +26,19 @@ namespace v1_10.Views
                 + " change any of the information unless you have to."
                 + " Changing the information means a greater chance " +
                 "to get things wrong", "OK");
-             var setting= new SQLiteConnection(App.settingpath)
-            .Table<settingsdata>()
-            .ToList()
-            .First();
-            Language lang = setting.language;
-            height hieg = setting.height;
-            weight wieg = setting.weight;
-            bp pres = setting.bp;
+            try
+            {
+                var setting = new SQLiteConnection(App.settingpath)
+               .Table<settingsdata>()
+               .ToList()
+               .First();
+                lang = setting.language;
+                hieg = setting.height;
+                 wieg = setting.weight;
+                pres = setting.bp;
+            }
+            finally { }
+            
             try
             {
                 if (lang == Language.English)
@@ -40,13 +49,13 @@ namespace v1_10.Views
                     lbl2.Text = "Height";
                     lbl3.Text = "Weight";
                     lbl4.Text = "Systolic Blood pressure";
-                    lbl5.Text = "Dialostic Blood pressure";
+                    lbl5.Text = "Diastolic Blood pressure";
                     lbl6.Text = "Cholesterol level";
                     lbl7.Text = "HDL level";
                     lbl8.Text = "Gender";
                     lbl9.Text = "Are you a smoker?";
                     lbl10.Text = "Do you have diabetes?";
-                    lbl11.Text = "Are you always taking medicine?";
+                    //lbl11.Text = "Are you always taking medicine?";
                     height_text.Placeholder = "(in ";
                     if (hieg == Models.height.Meter)
                         height_text.Placeholder += "cm)";
@@ -74,7 +83,7 @@ namespace v1_10.Views
                     gend.ItemsSource=new string[] {"---Choose an item---" ,"Male", "Female" };
                     smok.ItemsSource = new string[] { "---Choose an item---", "Yes", "No" };
                     diab.ItemsSource= new string[] { "---Choose an item---", "Yes", "No" };
-                    tba.ItemsSource= new string[] { "---Choose an item---", "Yes", "No" };
+                    //tba.ItemsSource= new string[] { "---Choose an item---", "Yes", "No" };
                     Title = "User Profile";
                     btn.Text = "Submit";
                 }
@@ -91,7 +100,7 @@ namespace v1_10.Views
                     lbl8.Text = "性別";
                     lbl9.Text = "閣下有沒有吸煙的習慣?";
                     lbl10.Text = "閣下有沒有糖尿病?";
-                    lbl11.Text = "閣下是否長期病患?";
+                    //lbl11.Text = "閣下是否長期病患?";
                     height_text.Placeholder = "(";
                     if (hieg == Models.height.Meter)
                         height_text.Placeholder += "公分)";
@@ -119,7 +128,7 @@ namespace v1_10.Views
                     gend.ItemsSource = new string[] { "---請選擇---", "男", "女" };
                     smok.ItemsSource = new string[] { "---請選擇---", "有", "沒有" };
                     diab.ItemsSource = new string[] { "---請選擇---", "有", "沒有" };
-                    tba.ItemsSource = new string[] { "---請選擇---", "是", "否" };
+                    //tba.ItemsSource = new string[] { "---請選擇---", "是", "否" };
                     Title = "個人檔案";
                     btn.Text = "提交";
                 }
@@ -137,7 +146,7 @@ namespace v1_10.Views
                     lbl8.Text = "性別";
                     lbl9.Text = "阁下有沒有吸烟的习惯?";
                     lbl10.Text = "阁下有沒有糖尿病?";
-                    lbl11.Text = "阁下是否长期病患?";
+                    //lbl11.Text = "阁下是否长期病患?";
                     height_text.Placeholder = "(";
                     if (hieg == Models.height.Meter)
                         height_text.Placeholder += "公分)";
@@ -165,7 +174,7 @@ namespace v1_10.Views
                     gend.ItemsSource = new string[] { "---请选择---", "男", "女" };
                     smok.ItemsSource = new string[] { "---请选择---", "有", "沒有" };
                     diab.ItemsSource = new string[] { "---请选择---", "有", "沒有" };
-                    tba.ItemsSource = new string[] { "---请选择---", "是", "否" };
+                    //tba.ItemsSource = new string[] { "---请选择---", "是", "否" };
                     Title = "个人档案";
                     btn.Text = "提交";
                 }
@@ -188,15 +197,15 @@ namespace v1_10.Views
                     gend.SelectedIndex = bootoint(dBs.First().genD);
                     smok.SelectedIndex = bootoint(dBs.First().smoK);
                     diab.SelectedIndex = bootoint(dBs.First().diaB);
-                    tba.SelectedIndex = bootoint(dBs.First().medic);
+                    //tba.SelectedIndex = bootoint(dBs.First().medic);
                 }
                 catch (Exception)
                 {
                     gend.SelectedIndex = 0;
                     smok.SelectedIndex = 0;
                     diab.SelectedIndex = 0;
-                    tba.SelectedIndex = 0;
-                    DOB.Date = new DateTime(1949, 10, 1);
+                    //tba.SelectedIndex = 0;
+                    DOB.Date = DateTime.Today;
                 }
             }
             DOB.MaximumDate = DateTime.Today;
@@ -204,12 +213,16 @@ namespace v1_10.Views
         public Personal_Information ()
 		{
             InitializeComponent();
-            using (SQLiteConnection conn = new SQLiteConnection(App.settingpath))
+            try
             {
-                conn.CreateTable<settingsdata>();
-                Language lang = conn.Table<settingsdata>().ToList().First().language;
+                using (SQLiteConnection conn = new SQLiteConnection(App.settingpath))
+                {
+                    conn.CreateTable<settingsdata>();
+                    Language lang = conn.Table<settingsdata>().ToList().First().language;
 
+                }
             }
+            finally { }
                         
             height_text.Keyboard = Keyboard.Numeric;
             weight_text.Keyboard = Keyboard.Numeric;
@@ -222,6 +235,7 @@ namespace v1_10.Views
         }
         private void Button_Clicked(object sender, EventArgs e)
         {
+            int k = (int)lang;
             try
             {
                 height=double.Parse(height_text.Text);
@@ -233,7 +247,7 @@ namespace v1_10.Views
                 gen = Extendparse(gend.SelectedItem.ToString());
                 smo = Extendparse(smok.SelectedItem.ToString());
                 dia = Extendparse(diab.SelectedItem.ToString());
-                med = Extendparse(tba.SelectedItem.ToString());
+                //med = Extendparse(tba.SelectedItem.ToString());
                 assertgt0(height);
                 assertgt0(weight);
                 assertgt0(sybp);
@@ -244,7 +258,9 @@ namespace v1_10.Views
             }
             catch (Exception)
             {
-                DisplayAlert("Error", "The value(s) you input is/are not valid", "Retry");
+                DisplayAlert(new string[] { "Error", "錯誤", "错误" }[k], 
+                    new string[] { "The value(s) you input is/are not valid", "輸入的數值無效", "输入的数值无效" }[k]
+                    , new string[] { "Retry", "重試", "重试" }[k]);
                 return;
             }
             DB_pdata pdata = new DB_pdata() {
@@ -252,14 +268,15 @@ namespace v1_10.Views
                 hdll = hdl, Cho = chol,
                 Dbp = dibp, diaB = dia,
                 weig = weight, genD = gen,
-                Sbp=sybp,  smoK=smo,medic=med};
+                Sbp=sybp,  smoK=smo};
             using (SQLiteConnection conn = new SQLiteConnection(App.DBPATH))
             {     
                 
                 conn.CreateTable<DB_pdata>();
                 conn.DeleteAll<DB_pdata>();
                 int nbf =conn.Insert(pdata);
-                if (nbf > 0) DisplayAlert("Successful", "saved", "close");
+                if (nbf > 0) DisplayAlert(new string[] { "Successful", "成功", "成功" }[k],
+                    new string[] { "saved", "已儲存", "已储存" }[k], new string[] { "close", "關閉", "关闭" }[k]);
                 else DisplayAlert("Failure", "record failed to be saved", "retry");
             }             
         }
