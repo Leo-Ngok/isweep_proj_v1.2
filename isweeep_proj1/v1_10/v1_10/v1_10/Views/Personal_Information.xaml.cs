@@ -14,7 +14,7 @@ namespace v1_10.Views
 	public partial class Personal_Information : ContentPage
 	{
         double height, weight, sybp, dibp, chol, hdl;
-        bool gen, smo, dia,med;
+        bool gen, smo, dia;
         Language lang;
         height hieg;
         weight wieg;
@@ -22,10 +22,7 @@ namespace v1_10.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            DisplayAlert("Warning", "You are not advised to"
-                + " change any of the information unless you have to."
-                + " Changing the information means a greater chance " +
-                "to get things wrong", "OK");
+            
             try
             {
                 var setting = new SQLiteConnection(App.settingpath)

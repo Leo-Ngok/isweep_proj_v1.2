@@ -4,8 +4,9 @@
              x:Class="v1_10.Views.Home">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="refresh now"
+            <Button x:Name="onlybtn" Text="Get CVD index immediately"
                     Clicked="Button_Clicked"
+                    
                 HorizontalOptions="CenterAndExpand"/>
             <Label
                 x:Name="debuglabel"

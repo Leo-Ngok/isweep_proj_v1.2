@@ -13,6 +13,7 @@ namespace v1_10.ViewModels
             int idx = (int)new SQLiteConnection(App.settingpath).
                 Table<settingsdata>().ToList()[0].language;
             Title = new string[] { "About", "關於", "关于" }[idx];
+            
             mullang = new string[] 
             {
                 new string[]{ "CVD risk index calculator",
@@ -30,9 +31,11 @@ namespace v1_10.ViewModels
                 new string[]{ "Feel free to give any feedback and recommendations.",
                     "歡迎對本應用提出意見/反饋，" ,
                     "欢迎对本程序提出意见/反馈，" }[idx],
-                new string[]{ "Press me","請按此","请按此" }[idx],
+                new string[]{ "Press me ","請按此","请按此" }[idx],
                 new string[]{ "for more details.","以取得更多資訊", "以取得更多资讯"}[idx]
             };
+            Android.Util.Log.Debug("aboutcontent", mullang[0]);
+            Android.Util.Log.Debug("titlecontent", Title);
             OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
 
         }

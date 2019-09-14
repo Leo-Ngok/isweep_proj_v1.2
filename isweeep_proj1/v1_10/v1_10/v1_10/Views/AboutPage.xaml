@@ -39,7 +39,7 @@
                             <FormattedString.Spans>
                                 <Span Text="{Binding mullang[0]}" FontAttributes="Bold" FontSize="16" />
                                 <Span Text=" " />
-                                <Span Text="1.10" ForegroundColor="{StaticResource LightTextColor}" />
+                                <Span Text="1.8" ForegroundColor="{StaticResource LightTextColor}" />
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
@@ -73,7 +73,8 @@
                                 <Span Text="{Binding mullang[7]}" FontAttributes="Bold" TextDecorations="Underline">
                                     <Span.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding ClickCommand}"
-                                                              CommandParameter="https://docs.google.com/forms/d/1b_wTqBUDsbejZHGJ5LG5Cr5-dfUd_Z2gNcLym813Bdc/edit?usp=sharing"/>
+                                                              
+                                                              CommandParameter="https://docs.google.com/forms/d/1yfJG_cwfJZSbqMdSYg3CmiJj6MBBjAEne6xNkRKsYHY/edit?usp=sharing"/>
                                     </Span.GestureRecognizers>
                                 </Span>
                                                                           

@@ -73,6 +73,7 @@ namespace v1_10.Views
             humchart.Title.Text = humtitle[p];
             humchart.SecondaryAxis.Title.Text = humyaxis[p];
             humchart.PrimaryAxis.Title.Text = tempxaxis[p];
+            
         }
 
     }

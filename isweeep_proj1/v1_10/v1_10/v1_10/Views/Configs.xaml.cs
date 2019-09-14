@@ -19,6 +19,18 @@ namespace v1_10.Views
             InitializeComponent();
             setcontent();
         }
+        public Configs(bool shownextbtn)
+        {
+            InitializeComponent();
+            setcontent();
+            btnext.IsVisible = shownextbtn;
+            btnext.Clicked += Btnext_Clicked1;
+            //Navigation.PushModalAsync(new infopage());
+            
+        }
+
+        private async void Btnext_Clicked1(object sender, EventArgs e) => await Navigation.PopModalAsync();
+
         Language lang;
         private void setcontent()
         {
@@ -52,7 +64,7 @@ namespace v1_10.Views
                 toadetail.Text = new string[] { "When do you want to receive alerts about your health?", "接收天氣通知的時間", "接收天气通知的时间" }[k];
 
                 Title = new string[] { "Preferences", "設定", "设定" }[k];
-
+                btnext.Text = new string[] { "Next", "下一步", "下一步" }[k];
 
             }
             catch (Exception) { }
@@ -63,6 +75,11 @@ namespace v1_10.Views
         {
             base.OnDisappearing();
 
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            setcontent();
         }
         private void savedata()
         {
@@ -219,6 +236,14 @@ namespace v1_10.Views
                     new string[] { "OK", "確定", "确定" }[(int)lang]);
                 savedata(); setcontent();            
             }
+        }
+
+        private void Btnext_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
+            OnDisappearing();
+            //Navigation.PopModalAsync();
+            Navigation.PushModalAsync(new Personal_Information());
         }
     }
 }

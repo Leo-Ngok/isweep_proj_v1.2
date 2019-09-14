@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using SQLite;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Forms.Internals;
 
 namespace v1_10.Views
 {
@@ -15,8 +16,8 @@ namespace v1_10.Views
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
         List<HomeMenuItem> menuItems;
         string[][] text = {new string[] {"Home","主頁","主页"},
-        new string[]{"Record","記錄","记录"},
-        new string[]{"Weather Forecast","天氣預告","天气预告"},
+        //new string[]{"Record","記錄","记录"},
+        //new string[]{"Weather Forecast","天氣預告","天气预告"},
         new string[]{"Intereval Timer","區間計時器","区间计时器" },
         new string[]{"Profile","個人檔案","个人档案" },
         new string[]{ "Configurations","設定","设定"},
@@ -28,15 +29,16 @@ namespace v1_10.Views
             menuItems = new List<HomeMenuItem>
             {               
                 new HomeMenuItem{Id= MenuItemType.Home ,Title="Home"},
-                new HomeMenuItem{Id= MenuItemType.Record ,Title="Record"},
-                new HomeMenuItem{Id=MenuItemType.Weather,Title="Weather Forecast"},
+               // new HomeMenuItem{Id= MenuItemType.Record ,Title="Record"},
+                //new HomeMenuItem{Id=MenuItemType.Weather,Title="Weather Forecast"},
                 new HomeMenuItem {Id= MenuItemType.Interval_Timer,Title="Interval Timer"}, 
                 new HomeMenuItem {Id=MenuItemType.Profile,Title="Profile"},
                 new HomeMenuItem {Id=MenuItemType.Configurations,Title="Configurations"},
                 new HomeMenuItem {Id = MenuItemType.About, Title="About"}
             };
+            Android.Util.Log.Debug("string1", menuItems[0].Title);
             ListViewMenu.ItemsSource = menuItems;
-            ListViewMenu.SelectedItem = menuItems[0];
+            //ListViewMenu.SelectedItem = menuItems[0];
             ListViewMenu.ItemSelected += async (sender, e) =>
             {
                 if (e.SelectedItem == null) return ;
@@ -46,7 +48,7 @@ namespace v1_10.Views
         }
         protected override void OnAppearing()
         {
-            try { updatetext(); } finally { }
+            try { updatetext(); } catch(Exception) { }
             base.OnAppearing();
         }
         public void updatetext()
@@ -54,11 +56,11 @@ namespace v1_10.Views
             try
             {
                 int p = (int)new SQLiteConnection(App.settingpath).Table<settingsdata>().ToList().First().language;
-                for (int i = 0; i < 7; i++)
+                for (int i = 0; i < 5; i++)
                     menuItems[i].Title = text[i][p];
                 ListViewMenu.ItemsSource = menuItems;
             }
-            finally { }
+            catch(Exception) { }
         }
         public void appearanddisappear()
         {

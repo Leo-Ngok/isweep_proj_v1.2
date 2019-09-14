@@ -20,7 +20,10 @@ namespace v1_10.Views
             MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
             
         }
-
+        public MainPage(bool loadlang)
+        {
+            Navigation.PushModalAsync(new startpage());
+        }
         public async Task NavigateFromMenu(int id)
         {
             if (!MenuPages.ContainsKey(id))

@@ -14,7 +14,7 @@ namespace v1_10.Views
         }
         public ICommand ClickCommand => new Command<string>((url) =>
         {
-            Device.OpenUri(new System.Uri(url));
+            Device.OpenUri(new Uri(url));
         });
     }
 }
