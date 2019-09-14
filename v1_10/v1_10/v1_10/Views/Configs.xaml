@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
+             x:Class="v1_10.Views.Configs"
+             xmlns:local1="clr-namespace:v1_10.Views"
+             Title="Preferences">
+    <ScrollView>
+        <TableView>
+            <TableRoot>
+                <TableSection Title="Unit of measurement" x:Name="measurementsection">
+
+                    <TextCell x:Name="Weightset" Text="Weight" Tapped="TextCell_Tapped" Detail="Kilogram"/>
+                    <TextCell x:Name="Heightset" Text="Height" Tapped="Heightset_Tapped"  Detail="Meter"/>
+                    <TextCell x:Name="Bpset" Text="Blood pressure" Tapped="Bpset_Tapped"  Detail="mmHg" IsEnabled="False"/>
+                    <TextCell x:Name="Tpset" Text="Temperature" Tapped="Tpset_Tapped"  Detail="Celsius"/>
+                    <TextCell x:Name="Lang" Text="Language" Tapped="Lang_Tapped"  Detail="English"/>
+                </TableSection>
+                <TableSection Title="Notifications" x:Name="notifsection">
+                    <SwitchCell x:Name="weatheroption" Text="Weather alerts" On="True" IsEnabled="False" />
+                    <SwitchCell x:Name="otheroption" Text="Other alerts" On="True" IsEnabled="False"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label x:Name="toatitle" Text="Time of alert" VerticalOptions="Center"></Label>
+                            <Label x:Name="toadetail" Text="When do you want to receive alerts about your health?"/>
+                            <TimePicker x:Name="timeofalert" IsEnabled="False"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout>
+                            <Button x:Name="btnext" Clicked="Btnext_Clicked" IsVisible="False"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        
+    </ScrollView>
+</ContentPage>

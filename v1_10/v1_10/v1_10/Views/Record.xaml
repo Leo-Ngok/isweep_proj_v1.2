@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="v1_10.Views.Record"
+             xmlns:local1="clr-namespace:v1_10.Models"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             Title="Past records">
+    <ContentPage.BindingContext>
+        <local1:DB_weather/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+
+        <RelativeLayout>
+            <DatePicker x:Name="Mindate"
+                RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=10}"
+                RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
+                RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0.5,Constant=0}"         
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=50}">
+                
+            </DatePicker>
+            <DatePicker x:Name="Maxdate"
+                        
+                RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=10}"
+                RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0.5, Constant=0}"
+                RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0.5,Constant=0}"         
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=50}"></DatePicker>
+            <Button x:Name="showRecordbtn" Text="Show records" Clicked="ShowRecordbtn_Clicked"
+                RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=70}"
+                RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=0}"
+                RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"         
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=50}"></Button>
+            
+            <chart:SfChart x:Name="weatherchart"
+                RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=130}"
+                RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
+                RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1,Constant=0}"         
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=300}">
+              
+               
+                <chart:SfChart.PrimaryAxis>
+                    <chart:DateTimeAxis>
+                        <chart:DateTimeAxis.Title>
+                            <chart:ChartAxisTitle Text="Date"/>
+                        </chart:DateTimeAxis.Title>
+                    </chart:DateTimeAxis>
+
+                </chart:SfChart.PrimaryAxis>
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis>
+                        <chart:NumericalAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle LabelFormat="##.#°C"/>
+                        </chart:NumericalAxis.LabelStyle>
+                        <chart:NumericalAxis.Title>
+                            <chart:ChartAxisTitle Text="Temperature"/>
+                        </chart:NumericalAxis.Title>
+                    </chart:NumericalAxis>
+                </chart:SfChart.SecondaryAxis>
+                <chart:LineSeries x:Name="maxtempdata" Color="Red"/>
+                <chart:LineSeries x:Name="mintempdata" Color="Blue"/>
+                <chart:SfChart.Title>
+                    <chart:ChartTitle Text="Temperature (Trend)"/>
+                </chart:SfChart.Title>
+
+            </chart:SfChart>
+            <chart:SfChart x:Name="chart0"
+                RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=440}"
+                RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
+                RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=300}"
+            >
+                <chart:SfChart.PrimaryAxis>
+                    <chart:DateTimeAxis>
+                        <chart:DateTimeAxis.Title>
+                            <chart:ChartAxisTitle Text="Date"/>
+                        </chart:DateTimeAxis.Title>
+                    </chart:DateTimeAxis>
+
+                </chart:SfChart.PrimaryAxis>
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis>
+                        <chart:NumericalAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle LabelFormat="##.#%"/>
+                        </chart:NumericalAxis.LabelStyle>
+                        <chart:NumericalAxis.Title>
+                            <chart:ChartAxisTitle Text="Humidity"/>
+                        </chart:NumericalAxis.Title>
+
+                    </chart:NumericalAxis>
+                </chart:SfChart.SecondaryAxis>
+                <chart:LineSeries x:Name="humi"
+                    ItemsSource="{Binding WeatherInfo}"
+                            XBindingPath="date"
+                            YBindingPath="Hum_level"
+                                  
+                            />
+                <chart:SfChart.Title>
+                    <chart:ChartTitle Text="Hudmidity (Trend)"/>
+                </chart:SfChart.Title>
+
+            </chart:SfChart>
+            <chart:SfChart x:Name="chart1"
+                RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=750}"
+                RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
+                RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=300}"
+            >
+                <chart:SfChart.PrimaryAxis>
+                    <chart:DateTimeAxis>
+                        <chart:DateTimeAxis.Title>
+                            <chart:ChartAxisTitle Text="Date"/>
+                        </chart:DateTimeAxis.Title>
+                    </chart:DateTimeAxis>
+
+                </chart:SfChart.PrimaryAxis>
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis>
+                        <chart:NumericalAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle LabelFormat="##.#μg/m³"/>
+                        </chart:NumericalAxis.LabelStyle>
+                        <chart:NumericalAxis.Title>
+                            <chart:ChartAxisTitle Text="PM 2.5 conc."/>
+                        </chart:NumericalAxis.Title>
+
+                    </chart:NumericalAxis>
+                </chart:SfChart.SecondaryAxis>
+                <chart:LineSeries x:Name="PM2_5"
+                    ItemsSource="{Binding WeatherInfo}"
+                            XBindingPath="date"
+                            YBindingPath="PM2_5_level"
+                                  
+                            />
+                <chart:SfChart.Title>
+                    <chart:ChartTitle Text="PM 2.5 (Trend)"/>
+                </chart:SfChart.Title>
+
+            </chart:SfChart>
+            <chart:SfChart x:Name="chart2"
+                RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=1060}"
+                RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
+                RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=300}"
+            >
+                <chart:SfChart.PrimaryAxis>
+                    <chart:DateTimeAxis>
+                        <chart:DateTimeAxis.Title>
+                            <chart:ChartAxisTitle Text="Date"/>
+                        </chart:DateTimeAxis.Title>
+                    </chart:DateTimeAxis>
+
+                </chart:SfChart.PrimaryAxis>
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis>
+                        <chart:NumericalAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle LabelFormat="##.#μg/m³"/>
+                        </chart:NumericalAxis.LabelStyle>
+                        <chart:NumericalAxis.Title>
+                            <chart:ChartAxisTitle Text="PM 10 conc."/>
+                        </chart:NumericalAxis.Title>
+
+                    </chart:NumericalAxis>
+                </chart:SfChart.SecondaryAxis>
+                <chart:LineSeries x:Name="PM10"
+                    ItemsSource="{Binding WeatherInfo}"
+                            XBindingPath="date"
+                            YBindingPath="PM_10_level"
+                                  
+                            />
+                <chart:SfChart.Title>
+                    <chart:ChartTitle Text="PM 10 (Trend)"/>
+                </chart:SfChart.Title>
+
+            </chart:SfChart>
+            <chart:SfChart x:Name="chart3"
+                RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=1370}"
+                RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
+                RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=300}"
+            >
+                <chart:SfChart.PrimaryAxis>
+                    <chart:DateTimeAxis>
+                        <chart:DateTimeAxis.Title>
+                            <chart:ChartAxisTitle Text="Date"/>
+                        </chart:DateTimeAxis.Title>
+                    </chart:DateTimeAxis>
+
+                </chart:SfChart.PrimaryAxis>
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis>
+                        <chart:NumericalAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle LabelFormat="##.#μg/m³"/>
+                        </chart:NumericalAxis.LabelStyle>
+                        <chart:NumericalAxis.Title>
+                            <chart:ChartAxisTitle Text="SO₂ conc."/>
+                        </chart:NumericalAxis.Title>
+
+                    </chart:NumericalAxis>
+                </chart:SfChart.SecondaryAxis>
+                <chart:LineSeries x:Name="SO2"
+                    ItemsSource="{Binding WeatherInfo}"
+                            XBindingPath="date"
+                            YBindingPath="SO2_level"
+                                  
+                            />
+                <chart:SfChart.Title>
+                    <chart:ChartTitle Text="SO₂ (Trend)"/>
+                </chart:SfChart.Title>
+
+            </chart:SfChart>
+            <chart:SfChart x:Name="chart4"
+                RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=1680}"
+                RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
+                RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=300}"
+            >
+                <chart:SfChart.PrimaryAxis>
+                    <chart:DateTimeAxis>
+                        <chart:DateTimeAxis.Title>
+                            <chart:ChartAxisTitle Text="Date"/>
+                        </chart:DateTimeAxis.Title>
+                    </chart:DateTimeAxis>
+
+                </chart:SfChart.PrimaryAxis>
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis>
+                        <chart:NumericalAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle LabelFormat="##.#mg/m³"/>
+                        </chart:NumericalAxis.LabelStyle>
+                        <chart:NumericalAxis.Title>
+                            <chart:ChartAxisTitle Text="CO conc."/>
+                        </chart:NumericalAxis.Title>
+
+                    </chart:NumericalAxis>
+                </chart:SfChart.SecondaryAxis>
+                <chart:LineSeries x:Name="CO"
+                    ItemsSource="{Binding WeatherInfo}"
+                            XBindingPath="date"
+                            YBindingPath="CO_level"
+                                  
+                            />
+                <chart:SfChart.Title>
+                    <chart:ChartTitle Text="CO (Trend)"/>
+                </chart:SfChart.Title>
+
+            </chart:SfChart>
+            <chart:SfChart x:Name="chart5"
+                RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=1990}"
+                RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
+                RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=300}"
+            >
+                <chart:SfChart.PrimaryAxis>
+                    <chart:DateTimeAxis>
+                        <chart:DateTimeAxis.Title>
+                            <chart:ChartAxisTitle Text="Date"/>
+                        </chart:DateTimeAxis.Title>
+                    </chart:DateTimeAxis>
+
+                </chart:SfChart.PrimaryAxis>
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis>
+                        <chart:NumericalAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle LabelFormat="##.#μg/m³"/>
+                        </chart:NumericalAxis.LabelStyle>
+                        <chart:NumericalAxis.Title>
+                            <chart:ChartAxisTitle Text="NO₂ conc."/>
+                        </chart:NumericalAxis.Title>
+
+                    </chart:NumericalAxis>
+                </chart:SfChart.SecondaryAxis>
+                <chart:LineSeries x:Name="NO2"
+                    ItemsSource="{Binding WeatherInfo}"
+                            XBindingPath="date"
+                            YBindingPath="NO2_level"
+                                  
+                            />
+                <chart:SfChart.Title>
+                    <chart:ChartTitle Text="NO₂ (Trend)"/>
+                </chart:SfChart.Title>
+
+            </chart:SfChart>
+            <chart:SfChart x:Name="chart6"
+                RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=2300}"
+                RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
+                RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=300}"
+            >
+                <chart:SfChart.PrimaryAxis>
+                    <chart:DateTimeAxis>
+                        <chart:DateTimeAxis.Title>
+                            <chart:ChartAxisTitle Text="Date"/>
+                        </chart:DateTimeAxis.Title>
+                    </chart:DateTimeAxis>
+
+                </chart:SfChart.PrimaryAxis>
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis>
+                        <chart:NumericalAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle LabelFormat="##.#μg/m³"/>
+                        </chart:NumericalAxis.LabelStyle>
+                        <chart:NumericalAxis.Title>
+                            <chart:ChartAxisTitle Text="O₃ conc."/>
+                        </chart:NumericalAxis.Title>
+
+                    </chart:NumericalAxis>
+                </chart:SfChart.SecondaryAxis>
+                <chart:LineSeries x:Name="O3"
+                    ItemsSource="{Binding WeatherInfo}"
+                            XBindingPath="date"
+                            YBindingPath="O3_level"
+                                  
+                            />
+                <chart:SfChart.Title>
+                    <chart:ChartTitle Text="O₃ (Trend)"/>
+                </chart:SfChart.Title>
+
+            </chart:SfChart>
+
+
+        </RelativeLayout>
+        
+    </ScrollView>
+</ContentPage>

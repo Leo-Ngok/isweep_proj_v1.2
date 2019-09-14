@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:v1_10"
+             xmlns:local1="clr-namespace:v1_10.Models"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             x:Class="v1_10.Views.Weather"
+             Title="Weather">
+    <ContentPage.BindingContext>
+        <local1:DB_weather/>
+        
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <RelativeLayout>
+            <chart:SfChart x:Name="weatherchart"
+                RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=10}"
+                RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
+                RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=300}"
+            >
+        <chart:SfChart.PrimaryAxis>
+               <chart:DateTimeAxis>
+                        <chart:DateTimeAxis.Title>
+                    <chart:ChartAxisTitle Text="Date"/>
+                </chart:DateTimeAxis.Title>
+            </chart:DateTimeAxis>
+
+        </chart:SfChart.PrimaryAxis>
+        <chart:SfChart.SecondaryAxis>
+            <chart:NumericalAxis>
+                <chart:NumericalAxis.LabelStyle>
+                    <chart:ChartAxisLabelStyle LabelFormat="##.#°C"/>
+                </chart:NumericalAxis.LabelStyle>
+                <chart:NumericalAxis.Title>
+                    <chart:ChartAxisTitle Text="Temperature"/>
+                </chart:NumericalAxis.Title>
+            </chart:NumericalAxis>
+        </chart:SfChart.SecondaryAxis>
+        <chart:LineSeries x:Name="maxtempdata" Color="Red"/>
+        <chart:LineSeries x:Name="mintempdata" Color="Blue"/>
+        <chart:SfChart.Title>
+            <chart:ChartTitle Text="Temperature of the next 5 days"/>
+        </chart:SfChart.Title>
+
+            </chart:SfChart>
+            <chart:SfChart x:Name="humchart"
+                RelativeLayout.YConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=320}"
+                RelativeLayout.XConstraint     ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=0, Constant=10}"
+                RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1, Constant=0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,   Constant=300}"
+            >
+                <chart:SfChart.PrimaryAxis>
+                    <chart:DateTimeAxis>
+                        <chart:DateTimeAxis.Title>
+                            <chart:ChartAxisTitle Text="Date"/>
+                        </chart:DateTimeAxis.Title>
+                    </chart:DateTimeAxis>
+
+                </chart:SfChart.PrimaryAxis>
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis>
+                        <chart:NumericalAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle LabelFormat="##.#%"/>
+                        </chart:NumericalAxis.LabelStyle>
+                        <chart:NumericalAxis.Title>
+                            <chart:ChartAxisTitle Text="Humidity"/>
+                        </chart:NumericalAxis.Title>
+                        
+                    </chart:NumericalAxis>
+                </chart:SfChart.SecondaryAxis>
+                <chart:LineSeries 
+                    ItemsSource="{Binding WeatherInfo}"
+                            XBindingPath="date"
+                            YBindingPath="Hum_level"
+                                  
+                            />
+                <chart:SfChart.Title>
+                    <chart:ChartTitle Text="Humidity of the next 5 days"/>
+                </chart:SfChart.Title>
+
+            </chart:SfChart>
+            
+        </RelativeLayout>
+        
+    </ScrollView>
+    
+    
+</ContentPage>

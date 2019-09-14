@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="v1_10.Views.Home">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button x:Name="onlybtn" Text="Get CVD index immediately"
+                    Clicked="Button_Clicked"
+                    
+                HorizontalOptions="CenterAndExpand"/>
+            <Label
+                x:Name="debuglabel"
+                Text=""
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+           
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
