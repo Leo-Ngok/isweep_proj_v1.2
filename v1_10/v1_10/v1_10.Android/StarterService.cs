@@ -22,7 +22,9 @@ namespace v1_10.Droid
                 StartForeground(1, new Notification());
             timer.Elapsed += (sender, e) =>
             {
-              if((DateTime.Now.Hour +1)%6==0&&DateTime.Now.Minute==0&&DateTime.Now.Second==0) App.calcvdAsync();
+              if((DateTime.Now.Hour +1)%6==0&&DateTime.Now.Minute==0&&DateTime.Now.Second==0)
+              //f(DateTime.Now.Hour==9&&DateTime.Now.Minute==16&&DateTime.Now.Second==0)
+                    App.calcvdAsync();
             };
             timer.Start();
         }
@@ -30,7 +32,7 @@ namespace v1_10.Droid
         private void startMyOwnForeground()
         {
             string channelid = "com.yw.cvdcalc";
-            string channelname = "service1";
+            string channelname = "Calculate CVD";
             NotificationChannel channel = new NotificationChannel(channelid,
                 channelname, NotificationImportance.None);
             channel.LightColor = Color.LightBlue;

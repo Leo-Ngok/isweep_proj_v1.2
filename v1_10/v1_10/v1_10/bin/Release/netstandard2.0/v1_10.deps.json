@@ -20,8 +20,7 @@
           "Xam.Plugins.Notifier": "3.0.1",
           "Xamarin.Forms": "3.4.0.1008975",
           "sqlite-net-pcl": "1.5.231",
-          "Mono.Android": "0.0.0.0",
-          "MOWeatherCore": "1.0.0.0"
+          "Mono.Android": "0.0.0.0"
         },
         "runtime": {
           "v1_10.dll": {}
@@ -489,11 +488,6 @@
         "runtime": {
           "Mono.Android.dll": {}
         }
-      },
-      "MOWeatherCore/1.0.0.0": {
-        "runtime": {
-          "MOWeatherCore.dll": {}
-        }
       }
     }
   },
@@ -868,11 +862,6 @@
       "hashPath": "xamarin.forms.3.4.0.1008975.nupkg.sha512"
     },
     "Mono.Android/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "MOWeatherCore/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

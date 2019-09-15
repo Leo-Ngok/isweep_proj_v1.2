@@ -2917,11 +2917,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\github\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10.Android\\v1_10.Android.csproj",
+      "projectUniqueName": "D:\\github\\isweep_proj_v1.2\\v1_10\\v1_10\\v1_10.Android\\v1_10.Android.csproj",
       "projectName": "v1_10.Android",
-      "projectPath": "D:\\github\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10.Android\\v1_10.Android.csproj",
+      "projectPath": "D:\\github\\isweep_proj_v1.2\\v1_10\\v1_10\\v1_10.Android\\v1_10.Android.csproj",
       "packagesPath": "C:\\Users\\patrickn\\.nuget\\packages\\",
-      "outputPath": "D:\\github\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10.Android\\obj\\",
+      "outputPath": "D:\\github\\isweep_proj_v1.2\\v1_10\\v1_10\\v1_10.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -2938,8 +2938,8 @@
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "D:\\github\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10\\v1_10.csproj": {
-              "projectPath": "D:\\github\\isweep_proj_v1.2\\isweeep_proj1\\v1_10\\v1_10\\v1_10\\v1_10.csproj"
+            "D:\\github\\isweep_proj_v1.2\\v1_10\\v1_10\\v1_10\\v1_10.csproj": {
+              "projectPath": "D:\\github\\isweep_proj_v1.2\\v1_10\\v1_10\\v1_10\\v1_10.csproj"
             }
           }
         }
